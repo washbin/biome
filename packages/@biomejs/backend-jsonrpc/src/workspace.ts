@@ -1921,6 +1921,11 @@ See https://biomejs.dev/linter/rules/no-misused-promises
 	 */
 	noMisusedPromises?: NoMisusedPromisesConfiguration;
 	/**
+	* Succinct description of the rule.
+See https://biomejs.dev/linter/rules/no-multi-assign 
+	 */
+	noMultiAssign?: NoMultiAssignConfiguration;
+	/**
 	* Disallow creating multiline strings by escaping newlines.
 See https://biomejs.dev/linter/rules/no-multi-str 
 	 */
@@ -3592,6 +3597,9 @@ export type NoLeakedRenderConfiguration =
 export type NoMisusedPromisesConfiguration =
 	| RulePlainConfiguration
 	| RuleWithNoMisusedPromisesOptions;
+export type NoMultiAssignConfiguration =
+	| RulePlainConfiguration
+	| RuleWithNoMultiAssignOptions;
 export type NoMultiStrConfiguration =
 	| RulePlainConfiguration
 	| RuleWithNoMultiStrOptions;
@@ -4997,6 +5005,10 @@ export interface RuleWithNoMisusedPromisesOptions {
 	level: RulePlainConfiguration;
 	options?: NoMisusedPromisesOptions;
 }
+export interface RuleWithNoMultiAssignOptions {
+	level: RulePlainConfiguration;
+	options?: NoMultiAssignOptions;
+}
 export interface RuleWithNoMultiStrOptions {
 	level: RulePlainConfiguration;
 	options?: NoMultiStrOptions;
@@ -6311,6 +6323,7 @@ export interface NoJsxLiteralsOptions {
 }
 export type NoLeakedRenderOptions = {};
 export type NoMisusedPromisesOptions = {};
+export type NoMultiAssignOptions = {};
 export type NoMultiStrOptions = {};
 export type NoNextAsyncClientComponentOptions = {};
 export type NoParametersOnlyUsedInRecursionOptions = {};
@@ -7134,6 +7147,7 @@ export type Category =
 	| "lint/nursery/noContinue"
 	| "lint/nursery/noDeprecatedImports"
 	| "lint/nursery/noDuplicateDependencies"
+	| "lint/nursery/noDuplicatedSpreadProps"
 	| "lint/nursery/noEmptySource"
 	| "lint/nursery/noEqualsToNull"
 	| "lint/nursery/noFloatingPromises"
@@ -7145,12 +7159,12 @@ export type Category =
 	| "lint/nursery/noLeakedRender"
 	| "lint/nursery/noMissingGenericFamilyKeyword"
 	| "lint/nursery/noMisusedPromises"
+	| "lint/nursery/noMultiAssign"
 	| "lint/nursery/noMultiStr"
 	| "lint/nursery/noNextAsyncClientComponent"
 	| "lint/nursery/noParametersOnlyUsedInRecursion"
 	| "lint/nursery/noReactForwardRef"
 	| "lint/nursery/noShadow"
-	| "lint/nursery/noDuplicatedSpreadProps"
 	| "lint/nursery/noSyncScripts"
 	| "lint/nursery/noTernary"
 	| "lint/nursery/noUnknownAttribute"
